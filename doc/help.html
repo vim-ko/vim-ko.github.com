@@ -8,14 +8,14 @@
 <body>
 <h2>HELP</h2>
 <pre>
-<b class="vimtag">*<a name="help.txt">help.txt</a>*</b>	Vim version 7.0 대상.  새로고침: 2007년 4월17일
+<b class="vimtag">*<a name="help.txt">help.txt</a>*</b>	Vim version 7.4 대상.  새로 고침: 2012년 12월 6일
 
 			VIM - 도움말 시작 파일
 									 k
-       돌아다니기:  화살표키를 사용하거나, "h"로 왼쪽, "j"로 아래쪽,   h   l
+       돌아다니기:  화살표 키를 사용하거나, "h"로 왼쪽, "j"로 아래쪽,  h   l
 		    "k"로 위쪽, "l"로 오른쪽으로 이동할 수 있습니다.	 j
  이 창을 닫으려면:  ":q<code class="special">&lt;Enter&gt;</code>"를 칩니다.
- Vim에서 나가려면:  ":qa!<code class="special">&lt;Enter&gt;</code>"를 칩니다(주의: 모든 바뀐점이 날아갑니다!).
+ Vim에서 나가려면:  ":qa!<code class="special">&lt;Enter&gt;</code>"를 칩니다(주의: 모든 변경사항이 날아갑니다!).
 
 설명으로 이동하기:  커서를 태그(가령, |<a href="help.html#하나">하나</a>|) 위로 옮긴 다음, CTRL-]를 칩니다.
   마우스를 쓰려면:  ":set mouse=a"로 마우스를 켜줍니다(xterm 또는 GUI에서).
@@ -26,28 +26,31 @@
 		    인자로 넘겨주면 도움말을 열어볼 수 있습니다.
 		    쓰이는 상황도 함께 적어주면 더 정확하게 찾을 수 있습니다:
 							<b class="vimtag">*<a name="help-context">help-context</a>*</b>
-<code class="section">			  상황		   접두어	   예시		</code>
-		      보통상태 명령	   (없음)	   :help x
-		      가시상태 명령	     v_		   :help v_u
-		      입력상태 명령	     i_		   :help i_<code class="special">&lt;Esc&gt;</code>
+<code class="section">			  모드		   접두어	   예시		</code>
+		      보통 모드 명령	   (없음)	   :help x
+		      시각 모드 명령	     v_		   :help v_u
+		      입력 모드 명령	     i_		   :help i_<code class="special">&lt;Esc&gt;</code>
 		      명령줄 명령	     :		   :help :quit
 		      명령줄 편집 도중	     c_		   :help c_<code class="special">&lt;Del&gt;</code>
 		      Vim 명령 인자	     -		   :help -r
-		      설정사항		     '		   :help 'textwidth'
+		      옵션		     '		   :help 'textwidth'
       도움말 찾기:  ":help word"를 친 다음, <code class="keystroke">CTRL-D</code>를 누르면 "word"와 관련된
 		    도움말 항목들을 볼 수 있습니다.
+		    또는 ":helpgrep word"를 사용하세요. |<code class="badlink">:helpgrep</code>|
+
 
 VIM은 Vi IMproved의 약자이며, "빔"이라고 읽습니다.  VIM은 많은 분들의 도움을
-받아 Bram Moolenaar씨가 만들었습니다.  |<code class="badlink">credits</code>| 참고.
-</pre><hr><pre>						<b class="vimtag">*<a name="doc-file-list">doc-file-list</a>*</b> <b class="vimtag">*<a name="Q_ct">Q_ct</a>*</b>
+받아 Bram Moolenaar씨가 만들었습니다.  |<a href="intro.html#credits">credits</a>| 참고.
+------------------------------------------------------------------------------
+						<b class="vimtag">*<a name="doc-file-list">doc-file-list</a>*</b> <b class="vimtag">*<a name="Q_ct">Q_ct</a>*</b>
 기본 내용:
-|<code class="badlink">quickref</code>|	가장 흔히 쓰는 명령들에 대한 개요
+|<a href="quickref.html#quickref">quickref</a>|	가장 흔히 쓰는 명령들에 대한 개요
 |<a href="usr_01.html#tutor">tutor</a>|		초보자를 위한 30분짜리 실습 과정
-|<code class="badlink">copying</code>|	저작권에 대하여
-|<code class="badlink">iccf</code>|		우간다의 가난한 아이들을 도와요
-|<code class="badlink">sponsor</code>|	Vim 개발 후원 및 Vim 등록 사용자 되기
-|<code class="badlink">www</code>|		Vim의 웹페이지들
-|<code class="badlink">bugs</code>|		버그를 어디로 신고해야 하나
+|<a href="uganda.html#copying">copying</a>|	저작권에 대하여
+|<a href="uganda.html#iccf">iccf</a>|		우간다의 가난한 아이들을 도와요
+|<a href="sponsor.html#sponsor">sponsor</a>|	Vim 개발 후원 및 Vim 등록 사용자 되기
+|<a href="intro.html#www">www</a>|		Vim의 웹페이지들
+|<a href="intro.html#bugs">bugs</a>|		버그를 어디로 신고해야 하나
 
 사용설명서: 이 파일들은 편집 작업을 어떻게 해내는지에 대해 설명합니다.
 
@@ -56,59 +59,60 @@ VIM은 Vi IMproved의 약자이며, "빔"이라고 읽습니다.  VIM은 많은 
 <code class="section">시작하기 </code>
 |<a href="usr_01.html#usr_01.txt">usr_01</a>|  설명서에 대하여
 |<a href="usr_02.html#usr_02.txt">usr_02</a>|  Vim 첫걸음
-|<code class="badlink">usr_03</code>|  돌아다니기
-|<code class="badlink">usr_04</code>|  약간 고치기
+|<a href="usr_03.html#usr_03.txt">usr_03</a>|  돌아다니기
+|<a href="usr_04.html#usr_04.txt">usr_04</a>|  약간 고치기
 |<a href="usr_05.html#usr_05.txt">usr_05</a>|  설정 바꾸기
-|<code class="badlink">usr_06</code>|  문법 강조 사용하기
+|<a href="usr_06.html#usr_06.txt">usr_06</a>|  문법 강조 사용하기
 |<a href="usr_07.html#usr_07.txt">usr_07</a>|  여러 파일 편집하기
 |<a href="usr_08.html#usr_08.txt">usr_08</a>|  창 나누기
-|<code class="badlink">usr_09</code>|  GUI 사용하기
-|<code class="badlink">usr_10</code>|  많이 고치기
-|<code class="badlink">usr_11</code>|  작업 복구하기
+|<a href="usr_09.html#usr_09.txt">usr_09</a>|  GUI 사용하기
+|<a href="usr_10.html#usr_10.txt">usr_10</a>|  많이 고치기
+|<a href="usr_11.html#usr_11.txt">usr_11</a>|  작업 복구하기
 |<a href="usr_12.html#usr_12.txt">usr_12</a>|  멋진 기술들
 
 <code class="section">효율적으로 편집하기 </code>
-|<code class="badlink">usr_20</code>|  명령줄 명령들 빨리 치기
-|<code class="badlink">usr_21</code>|  나갔다가 되돌아오기
+|<a href="usr_20.html#usr_20.txt">usr_20</a>|  명령줄 명령들 빨리 치기
+|<a href="usr_21.html#usr_21.txt">usr_21</a>|  나갔다가 되돌아오기
 |<a href="usr_22.html#usr_22.txt">usr_22</a>|  편집할 파일 찾기
 |<a href="usr_23.html#usr_23.txt">usr_23</a>|  특별한 파일 편집하기
 |<a href="usr_24.html#usr_24.txt">usr_24</a>|  빠르게 입력하기
-|<a href="usr_25.html#usr_25.txt">usr_25</a>|  예쁘게 편집하기
+|<a href="usr_25.html#usr_25.txt">usr_25</a>|  서식에 맞추어 편집하기
 |<a href="usr_26.html#usr_26.txt">usr_26</a>|  반복하기
 |<a href="usr_27.html#usr_27.txt">usr_27</a>|  찾기 명령과 패턴
 |<a href="usr_28.html#usr_28.txt">usr_28</a>|  접기
 |<a href="usr_29.html#usr_29.txt">usr_29</a>|  프로그램 코드 탐험하기
 |<a href="usr_30.html#usr_30.txt">usr_30</a>|  프로그램 편집하기
-|<code class="badlink">usr_31</code>|  GUI 활용하기
-|<a href="usr_32.html#usr_32.txt">usr_32</a>|  실행취소 트리
+|<a href="usr_31.html#usr_31.txt">usr_31</a>|  GUI 활용하기
+|<a href="usr_32.html#usr_32.txt">usr_32</a>|  실행 취소 트리
 
 <code class="section">Vim 주무르기 </code>
-|<code class="badlink">usr_40</code>|  새로운 명령 만들기
-|<code class="badlink">usr_41</code>|  Vim 스크립트 만들기
-|<code class="badlink">usr_42</code>|  새 메뉴 추가하기
-|<code class="badlink">usr_43</code>|  filetype 사용하기
-|<code class="badlink">usr_44</code>|  나만의 문법 강조 만들기
-|<code class="badlink">usr_45</code>|  내 언어 고르기
+|<a href="usr_40.html#usr_40.txt">usr_40</a>|  새로운 명령 만들기
+|<a href="usr_41.html#usr_41.txt">usr_41</a>|  Vim 스크립트 만들기
+|<a href="usr_42.html#usr_42.txt">usr_42</a>|  새 메뉴 추가하기
+|<a href="usr_43.html#usr_43.txt">usr_43</a>|  파일 형식 플러그인 사용하기
+|<a href="usr_44.html#usr_44.txt">usr_44</a>|  나만의 문법 강조 만들기
+|<a href="usr_45.html#usr_45.txt">usr_45</a>|  내 언어 고르기
 
 <code class="section">Vim 돌아가게 만들기 </code>
-|<code class="badlink">usr_90</code>|  Vim 설치하기
+|<a href="usr_90.html#usr_90.txt">usr_90</a>|  Vim 설치하기
 
 
-상세설명서: 이 파일들은 Vim의 구석구석을 설명합니다.	<b class="vimtag">*<a name="reference_toc">reference_toc</a>*</b>
+상세 설명서: 이 파일들은 Vim의 구석구석을 설명합니다.	<b class="vimtag">*<a name="reference_toc">reference_toc</a>*</b>
 
 <code class="section">General subjects </code>
-|<code class="badlink">intro</code>|	general introduction to Vim; notation used in help files
-|<a href="help.html#help.txt">help</a>|	overview and quick reference (this file)
-|<code class="badlink">index</code>|	alphabetical index of all commands
-|<code class="badlink">help-tags</code>|	all the tags you can jump to (index of tags)
-|<code class="badlink">howto</code>|	how to do the most common editing tasks
-|<code class="badlink">tips</code>|	various tips on using Vim
-|<code class="badlink">message</code>|	(error) messages and explanations
-|<code class="badlink">quotes</code>|	remarks from users of Vim
-|<code class="badlink">todo</code>|	known problems and desired extensions
-|<code class="badlink">develop</code>|	development of Vim
-|<code class="badlink">debug</code>|	debugging Vim itself
-|<code class="badlink">uganda</code>|	Vim distribution conditions and what to do with your money
+|<a href="intro.html#intro.txt">intro</a>|	Vim의 일반적인 소개; 도움말 파일에 사용된 표기법
+|<a href="help.html#help.txt">help</a>|	개요와 빠른 참조(이 파일)
+|<code class="badlink">helphelp</code>|	도움말 이용에 관하여
+|<code class="badlink">index</code>|	전체 명령에 대한 알파벳순 목차
+|<code class="badlink">help-tags</code>|	바로가기를 위한 모든 태그(태그 목차)
+|<code class="badlink">howto</code>|	가장 일반적인 편집 작업 방법
+|<code class="badlink">tips</code>|	Vim 사용에 대한 다양한 팁
+|<code class="badlink">message</code>|	(에러) 메시지와 설명
+|<code class="badlink">quotes</code>|	Vim 사용자들의 이야기
+|<code class="badlink">todo</code>|	알려진 문제점 및 사람들이 바라는 기능 확장
+|<code class="badlink">develop</code>|	Vim 개발
+|<code class="badlink">debug</code>|	Vim 자체에 대한 디버깅
+|<a href="uganda.html#uganda.txt">uganda</a>|	Vim 배포 조건과 당신의 돈으로 해야 할 일
 
 <code class="section">Basic editing </code>
 |<code class="badlink">starting</code>|	starting Vim, Vim command arguments, initialisation
@@ -135,7 +139,7 @@ VIM은 Vi IMproved의 약자이며, "빔"이라고 읽습니다.  VIM은 많은 
 |<code class="badlink">tabpage</code>|	commands for using multiple tab pages
 |<code class="badlink">syntax</code>|	syntax highlighting
 |<code class="badlink">spell</code>|	spell checking
-|<code class="badlink">diff</code>|	working with two or three versions of the same file
+|<code class="badlink">diff</code>|	working with two to four versions of the same file
 |<code class="badlink">autocmd</code>|	automatically executing commands on an event
 |<code class="badlink">filetype</code>|	settings done specifically for a type of file
 |<code class="badlink">eval</code>|	expression evaluation, conditional commands
@@ -152,6 +156,8 @@ VIM은 Vi IMproved의 약자이며, "빔"이라고 읽습니다.  VIM은 많은 
 |<code class="badlink">farsi</code>|	Farsi (Persian) editing
 |<code class="badlink">hebrew</code>|	Hebrew language support and editing
 |<code class="badlink">russian</code>|	Russian language support and editing
+|<code class="badlink">ft_ada</code>|	Ada (the programming language) support
+|<code class="badlink">ft_sql</code>|	about the SQL filetype plugin
 |<code class="badlink">hangulin</code>|	Hangul (Korean) input mode
 |<code class="badlink">rileft</code>|	right-to-left editing mode
 
@@ -163,6 +169,7 @@ VIM은 Vi IMproved의 약자이며, "빔"이라고 읽습니다.  VIM은 많은 
 
 <code class="section">Interfaces </code>
 |<code class="badlink">if_cscop</code>|	using Cscope with Vim
+|<code class="badlink">if_lua</code>|	Lua interface
 |<code class="badlink">if_mzsch</code>|	MzScheme interface
 |<code class="badlink">if_perl</code>|	Perl interface
 |<code class="badlink">if_pyth</code>|	Python interface
@@ -198,15 +205,18 @@ VIM은 Vi IMproved의 약자이며, "빔"이라고 읽습니다.  VIM은 많은 
 |<code class="badlink">os_win32</code>|	MS-Windows 95/98/NT
 						<b class="vimtag">*<a name="standard-plugin-list">standard-plugin-list</a>*</b>
 <code class="section">Standard plugins </code>
-|<code class="badlink">pi_gzip</code>|	Reading and writing compressed files
-|<code class="badlink">pi_netrw</code>|	Reading and writing files over a network
-|<code class="badlink">pi_paren</code>|	Highlight matching parens
-|<code class="badlink">pi_tar</code>|	Tar file explorer
-|<code class="badlink">pi_zip</code>|	Zip archive explorer
+|<code class="badlink">pi_getscript</code>| Downloading latest version of Vim scripts
+|<code class="badlink">pi_gzip</code>|      Reading and writing compressed files
+|<code class="badlink">pi_netrw</code>|     Reading and writing files over a network
+|<code class="badlink">pi_paren</code>|     Highlight matching parens
+|<code class="badlink">pi_tar</code>|       Tar file explorer
+|<code class="badlink">pi_vimball</code>|   Create a self-installing Vim script
+|<code class="badlink">pi_zip</code>|       Zip archive explorer
 
-추가설명서:					<b class="vimtag">*<a name="local-additions">local-additions</a>*</b>
+추가 설명서:					<b class="vimtag">*<a name="local-additions">local-additions</a>*</b>
 
-</pre><hr><pre><b class="vimtag">*<a name="하나">하나</a>*</b>		예시 하나
+------------------------------------------------------------------------------
+<b class="vimtag">*<a name="하나">하나</a>*</b>		예시 하나
 
 마우스를 두 번 누르거나 CTRL-]를 이용해서 여기로 왔을텐데, <code class="keystroke">CTRL-T</code>, <code class="keystroke">CTRL-O</code>,
 g<code class="special">&lt;RightMouse&gt;</code>, 또는 <code class="special">&lt;C-RightMouse&gt;</code>를 이용하면 원래 있던 곳으로 돌아갑니다.
@@ -215,10 +225,12 @@ g<code class="special">&lt;RightMouse&gt;</code>, 또는 <code class="special">&
 그러면 명령을 읽기가 훨씬 쉬워지지요.
 
 한편, | 사이에 있지 않은 그냥 낱말이라도, 그 위에서 CTRL-]를 누르면 Vim이
-가장 관련이 깊은 도움말을 찾아줍니다.
+가장 관련이 깊은 도움말을 찾아줍니다. 특히 작은따옴표 안에 있는 옵션들은요.
+예: 'compatible'.
 
-</pre><hr><pre> vim:tw=78:fo=tcq2:isk=!-~,^*,^\|,^\":ts=8:ft=help:norl:
+------------------------------------------------------------------------------
+ vim:tw=78:fo=tcq2:isk=!-~,^*,^\|,^\":ts=8:ft=help:norl:
 </pre>
-<p><i>Generated by vim2html on Fri Dec 23 22:48:56 PST 2011</i></p>
+<p><i>Generated by vim2html on 2013. 12. 14. (토) 19:53:58 KST</i></p>
 </body>
 </html>

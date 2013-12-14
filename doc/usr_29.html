@@ -8,7 +8,7 @@
 <body>
 <h2>USR_29</h2>
 <pre>
-<b class="vimtag">*<a name="usr_29.txt">usr_29.txt</a>*</b>	Vim version 7.0 대상.  새로고침: 2006 Apr 24
+<b class="vimtag">*<a name="usr_29.txt">usr_29.txt</a>*</b>	Vim version 7.4 대상.  새로 고침: 2008 6월 28일
 
 		      VIM 사용설명서 - Bram Moolenaar 저
 				       정지용 역
@@ -16,8 +16,8 @@
 			    프로그램 코드 탐험하기
 
 
-빔은 컴퓨터 프로그래머가 만들었습니다.  따라서 프로그램 작성에 도움이 되는
-기능들이 많은 것도 당연하겠지요.  어떤 변수나 함수가 정의되고 사용된 위치들을
+Vim은 컴퓨터 프로그래머가 만들었습니다.  따라서 프로그램 작성에 도움이 되는
+기능이 많은 것도 당연하겠지요.  어떤 변수나 함수가 정의되고 사용된 위치들을
 돌아다녀보십시오.  변수나 함수의 선언을 별도의 창에서 미리 살펴보십시오.  다음
 장에는 더 많은 내용이 기다리고 있습니다.
 
@@ -33,11 +33,11 @@
 
 </pre><hr><pre><b class="vimtag">*<a name="29.1">29.1</a>*</b>	태그 사용하기
 
-태그(tag)가 무엇일까요? 빔에서 태그는 어떤 이름이 정의된 위치입니다.  예를
+태그(tag)가 무엇일까요? Vim에서 태그는 어떤 이름이 정의된 위치입니다.  예를
 들면 C나 C++ 프로그램에서 함수의 정의 같은 것입니다.  태그 목록은 태그 파일에
-저장됩니다.  빔은 이 태그 파일을 이용하여 현재 어디에 있든지, 해당 이름이
+저장됩니다.  Vim은 이 태그 파일을 이용하여 현재 어디에 있든지, 해당 이름이
 정의된 위치로 이동시켜줍니다.
-   현재 디렉토리의 모든 C 파일에 대한 태그 파일을 생성하려면, 쉘에서 다음
+   현재 디렉터리의 모든 C 파일에 대한 태그 파일을 생성하려면, 셸에서 다음
 명령을 사용하십시오:
 <code class="example"></code>
 <code class="example">	ctags *.c</code>
@@ -48,7 +48,7 @@
 
 <code class="section">	http://ctags.sf.net </code>
 
-이제 빔에서 어떤 함수의 정의로 가고 싶다면, 다음 명령으로 이동할 수 있습니다:
+이제 Vim에서 어떤 함수의 정의로 가고 싶다면, 다음 명령으로 이동할 수 있습니다:
 
 <code class="example"></code>
 <code class="example">	:tag startlist</code>
@@ -56,7 +56,7 @@
 위 명령은 "startlist" 함수를 찾을 것입니다.  "startlist"가 다른 파일에
 있더라도 말이지요.
    CTRL-] 명령을 사용하면 현재 커서 위치에 있는 단어의 태그로 이동합니다.
-이 기능을 잘 이용하면 이리 저리 얽힌 C 코드를 훨씬 쉽게 돌아다닐 수 있습니다.
+이 기능을 잘 이용하면 이리저리 얽힌 C 코드를 훨씬 쉽게 돌아다닐 수 있습니다.
 예를 들어, "write_block"이란 함수를 보고 있는데, 이 함수가 "write_line"이란
 함수를 호출하고 있다고 합시다.  "write_line"이 어떤 일을 하는 함수일까요?
 커서를 "write_line"으로 옮기고 CTRL-]를 누르면, 함수가 정의된 곳으로 이동할 수
@@ -91,7 +91,7 @@ CTRL-]를 누릅시다.  이제 "write_char" 함수의 정의를 볼 수 있을 
 				       |<code class="badlink">}				    </code>|
 				       +------------------------------------+
 
-":tags" 명령은 지금까지 거쳐온 태그들의 목록을 보여줍니다.
+":tags" 명령은 지금까지 거쳐 온 태그들의 목록을 보여줍니다.
 
 	:tags
 <code class="section">	  # TO tag	   FROM line  in file/text </code>
@@ -99,24 +99,25 @@ CTRL-]를 누릅시다.  이제 "write_char" 함수의 정의를 볼 수 있을 
 <code class="section">	  2  1 write_char	   7  write_line.c </code>
 <code class="section">	&gt; </code>
 
-이제 돌아가봅시다.  <code class="keystroke">CTRL-T</code> 명령으로 이전 태그로 돌아갑니다.  위의 예에서는
+이제 돌아갑시다.  <code class="keystroke">CTRL-T</code> 명령으로 이전 태그로 돌아갑니다.  위의 예에서는
 "write_line" 함수의 "write_char" 호출 부분으로 돌아갑니다.
-   몇 개의 태그를 돌아갈 것인지 숫자를 지정할 수도 있습니다.  쭉 앞으로 갔다가
-뒤로 돌아와 보았습니다.  다시 앞으로 가봅시다.  다음 명령으로 태그 목록의 제일
-최신 태그로 이동합시다:
+   몇 개의 태그를 돌아갈 것인지 숫자를 지정할 수도 있습니다.  쭉 앞으로
+갔다가 뒤로 돌아와 보았습니다.  다시 앞으로 가봅시다.  다음 명령으로 태그
+목록의 제일 최신 태그로 이동합시다:
 <code class="example"></code>
 <code class="example">	:tag</code>
 <code class="example"></code>
-명령 앞에 숫자를 붙여서 이동할 태그수를 지정할 수 있습니다.  예제: ":3tag".
+명령 앞에 숫자를 붙여서 이동할 태그 수를 지정할 수 있습니다.  예제: ":3tag".
 <code class="keystroke">CTRL-T</code> 앞에도 숫자를 붙일 수 있습니다.
    이 명령들은 함수 호출 단계를 CTRL-]로 따라갔다가 <code class="keystroke">CTRL-T</code>로 다시 돌아올 수
 있게 해줍니다.  현재 위치를 보려면 ":tags" 명령을 사용하십시오.
 
 
 창 나누기
+---------
 
 ":tag" 명령은 현재 창에 열려있는 파일을 닫고 해당 태그가 포함된 파일을 엽니다.
-하지만 현재 파일과 새 파일을 동시에 보고 싶다면 어떻게 해야할까요?  ":tag"
+하지만 현재 파일과 새 파일을 동시에 보고 싶다면 어떻게 해야 할까요?  ":tag"
 명령 앞에 ":split" 명령을 사용해서 창을 나누면 됩니다.  다음과 같이 두 명령을
 줄여서 쓸 수 있습니다:
 <code class="example">	:stag tagname</code>
@@ -130,50 +131,53 @@ CTRL-]를 누릅시다.  이제 "write_char" 함수의 정의를 볼 수 있을 
 
 
 더 많은 태그 파일들
+-------------------
 
-파일이 여러 디렉토리에 들어있다면, 각 디렉토리마다 태그 파일을 만들면 됩니다.
-빔으로는 원래 하나의 디렉토리 안에 있는 태그 파일만 접근할 수 있습니다.
-   더 많은 태그 파일을 이용해서 찾으려면, 'tags'(태그) 설정에 모든 관련 태그
+파일이 여러 디렉터리에 들어있다면, 각 디렉터리마다 태그 파일을 만들면 됩니다.
+Vim으로는 원래 하나의 디렉터리 안에 있는 태그 파일만 접근할 수 있습니다.
+   더 많은 태그 파일을 이용해서 찾으려면, 'tags'(태그) 옵션에 모든 관련 태그
 파일을 설정하면 됩니다.  예:
 <code class="example"></code>
 <code class="example">	:set tags=./tags,./../tags,./*/tags</code>
 <code class="example"></code>
-위와 같이 설정하면, 현재 파일과 같은 디렉토리의 태그파일과 한 단계 위
-디렉토리, 하위 디렉토리들의 태그파일들이 모두 사용됩니다.
+위와 같이 설정하면, 현재 파일과 같은 디렉터리의 태그파일과 한 단계 위
+디렉터리, 하위 디렉터리들의 태그파일들이 모두 사용됩니다.
    이 정도만 해도 꽤 많지만, 더 많이 지정해야할 수도 있습니다.  예를 들어,
 "~/proj/src" 안의 파일을 편집하면, "~/proj/sub/tags" 파일을 찾을 수 없습니다.
-이런 경우 모든 하위 디렉토리-하위 디렉토리들의 하위 디렉토리를 포함하여-를 찾는
-방법이 있습니다.  예:
+이런 경우 모든 하위 디렉터리-하위 디렉터리들의 하위 디렉터리를 포함하여-를
+찾는 방법이 있습니다.  예:
 <code class="example"></code>
 <code class="example">	:set tags=~/proj/**/tags</code>
 <code class="example"></code>
 <code class="example"></code>
 하나의 태그 파일
+----------------
 
-위에서와 같이 빔이 여기저기서 태그 파일들을 읽어들이면, 하드디스크 긁는 소리가
-좀 거슬릴 겁니다.  물론 더 느릴테고요.  이 때는 하나의 커다란 태그파일을
-만들어서 사용하는 것이 낫습니다.  태그파일 생성은 시간이 좀 걸릴 수도
-있겠지만, 밤동안에 하면 됩니다.
+위에서와 같이 Vim이 여기저기서 태그 파일들을 읽어 들이면, 하드 디스크 긁는
+소리가 좀 거슬릴 겁니다.  물론 더 느릴 테고요.  이때는 하나의 커다란
+태그파일을 만들어서 사용하는 것이 낫습니다.  태그 파일 생성은 시간이 좀 걸릴
+수도 있겠지만, 밤 동안에 하면 됩니다.
    이렇게 하려면 위에서 말한 Exuberant ctags 프로그램이 필요합니다.  이
-프로그램은 디렉토리 구조 전체를 찾도록 하는 인자가 있습니다:
+프로그램에는 디렉터리 구조 전체를 찾도록 하는 인자가 있습니다:
 <code class="example"></code>
 <code class="example">	cd ~/proj</code>
 <code class="example">	ctags -R .</code>
 <code class="example"></code>
-이 방법의 또다른 장점은 Exuberant ctags가 여러가지 파일형식을 인식한다는
-것입니다.  C나 C++ 프로그램 뿐 아니라, Eiffel, 심지어는 빔 스크립트의
+이 방법의 또 다른 장점은 Exuberant ctags가 여러 가지 파일 형식을 인식한다는
+것입니다.  C나 C++ 프로그램 뿐 아니라, Eiffel, 심지어는 Vim 스크립트의
 태그까지 만들어줍니다.  이 기능에 대한 설명은 ctags 문서를 참고하십시오.
-   이제 위에서 만든 하나의 태그파일이 어디에 있는 지 빔에 지정하기만 하면
+   이제 위에서 만든 하나의 태그 파일이 어디에 있는 지 Vim에 지정하기만 하면
 됩니다:
 <code class="example"></code>
 <code class="example">	:set tags=~/proj/tags</code>
 <code class="example"></code>
 <code class="example"></code>
 여러 곳에 정의되어있을 때
+-------------------------
 
-함수 하나가 여러 번 정의되어있다면(혹은 하나의 메소드(method)가 여러
-클래스(class)에 정의되어있다면), "tag" 명령은 그 중 첫번째로 이동합니다.  만약
-현재 파일에 태그가 있다면 이 태그가 먼저 사용됩니다.
+함수 하나가 여러 번 정의되어있다면(혹은 하나의 메서드(method)가 여러
+클래스(class)에 정의되어있다면), "tag" 명령은 그 중 첫 번째로 이동합니다.
+만약 현재 파일에 태그가 있다면 이 태그가 먼저 사용됩니다.
    같은 단어에 대응되는 다음 태그로 가려면:
 <code class="example"></code>
 <code class="example">	:tnext</code>
@@ -183,7 +187,7 @@ CTRL-]를 누릅시다.  이제 "write_char" 함수의 정의를 볼 수 있을 
 <code class="example"></code>
 <code class="example">	:tselect tagname</code>
 <code class="example"></code>
-빔은 다음과 같이 선택 후보들을 보여줍니다:
+Vim은 다음과 같이 선택 후보들을 보여줍니다:
 
 <code class="section">	  # pri kind tag	       파일 </code>
 <code class="section">	  1 F	f    mch_init	       os_amiga.c </code>
@@ -197,21 +201,22 @@ CTRL-]를 누릅시다.  이제 "write_char" 함수의 정의를 볼 수 있을 
 <code class="section">	고를 숫자 입력 (<code class="special">&lt;CR&gt;</code>은 중지):  </code>
 
 이제 이동하려는 태그의 번호(맨 앞의 숫자)를 넣으면 됩니다.  각 태그가 어느
-곳을 가리키는 지를 알 수 있도록 여러 정보를 함께 보여줍니다.
+곳을 가리키는지를 알 수 있도록 여러 정보를 함께 보여줍니다.
 
 여러 태그들 사이를 이동하려면 다음 명령들을 사용하면 됩니다:
 
 	:tfirst			첫 번째 태그로 가기
-	:[숫자]tprevious	[숫자] 만큼 앞 태그로 가기
-	:[숫자]tnext		[숫자] 만큼 뒤 태그로 가기
+	:<code class="special">[count]</code>tprevious	<code class="special">[count]</code> 숫자만큼 앞 태그로 가기
+	:<code class="special">[count]</code>tnext		<code class="special">[count]</code> 숫자만큼 뒤 태그로 가기
 	:tlast			마지막 태그로 가기
 
-[숫자]가 생략된 경우에는 1이 사용됩니다.
+<code class="special">[count]</code>가 생략된 경우에는 1이 사용됩니다.
 
 
 태그 이름 추정하기
+------------------
 
-태그 이름이 길 때는 명령줄 자동완성을 사용하면 편리합니다.  처음 몇 글자만
+태그 이름이 길 때는 명령줄 자동 완성을 사용하면 편리합니다.  처음 몇 글자만
 입력하고 <code class="special">&lt;Tab&gt;</code>을 누르십시오:
 <code class="example"></code>
 <code class="example">	:tag write_<code class="special">&lt;Tab&gt;</code></code>
@@ -239,6 +244,7 @@ CTRL-]를 누릅시다.  이제 "write_char" 함수의 정의를 볼 수 있을 
 
 
 태그를 이용한 브라우저
+----------------------
 
 CTRL-] 으로 커서 위치의 이름이 정의된 곳으로 이동할 수 있다는 점을 이용하면,
 이런 이름들을 한 곳에 모아놓고 목차로 사용할 수도 있습니다.  다음 예를
@@ -247,8 +253,8 @@ CTRL-] 으로 커서 위치의 이름이 정의된 곳으로 이동할 수 있�
 <code class="example"></code>
 <code class="example">	ctags --c-types=f -f functions *.c</code>
 <code class="example"></code>
-이제 인자 없이 빔을 실행시킨 다음, 창을 세로로 나눠서 이 파일을 빔으로 엽니다:
-
+이제 인자 없이 Vim을 실행시킨 다음, 창을 세로로 나눠서 이 파일을 Vim으로
+엽니다:
 <code class="example"></code>
 <code class="example">	vim</code>
 <code class="example">	:vsplit functions</code>
@@ -260,22 +266,23 @@ CTRL-] 으로 커서 위치의 이름이 정의된 곳으로 이동할 수 있�
 <code class="example">	:nnoremap <code class="special">&lt;buffer&gt;</code> <code class="special">&lt;CR&gt;</code> 0ye<code class="special">&lt;C-W&gt;</code>w:tag <code class="special">&lt;C-R&gt;</code>"<code class="special">&lt;CR&gt;</code></code>
 <code class="example"></code>
 커서를 이동하고 싶은 함수가 있는 줄로 옮깁시다.  그리고 <code class="special">&lt;Enter&gt;</code>를 누르면,
-다른 창으로 이동해서 선택된 함수를 찾아갈 것입니다.
+다른 창으로 이동해서 선택한 함수를 찾아갈 것입니다.
 
 
 관련된 기능들
+-------------
 
 'ignorecase'(대소문자무시)를 켜면, 태그 이름을 찾을 때 대소문자를 무시합니다.
 
-'tagsearch'(태그찾기) 설정에 태그파일이 정렬되어있는 지 여부를 지정합니다.
-기본 값은 태그파일이 정렬되어있다고 가정하는 것으로, 이 경우 태그를 매우
+'tagsearch'(태그찾기) 옵션에 태그 파일이 정렬되어있는지 여부를 지정합니다.
+기본 값은 태그 파일이 정렬되어있다고 가정하는 것으로, 이 경우 태그를 매우
 빠르게 찾습니다.  하지만 태그 파일이 정렬되어있지 않다면, 제대로 동작하지 않게
 됩니다.
 
-'taglength'(태그길이) 설정은 태그에서 실제로 사용할 부분의 길이를 문자수
+'taglength'(태그길이) 옵션은 태그에서 실제로 사용할 부분의 길이를 문자수
 단위로 나타냅니다.
 
-SNiFF+ 프로그램을 사용할 때, 빔 인터페이스를 사용할 수 있습니다 |<code class="badlink">sniff</code>|.
+SNiFF+ 프로그램을 사용할 때, Vim 인터페이스를 사용할 수 있습니다 |<code class="badlink">sniff</code>|.
 SNiFF+은 상용 프로그램입니다.
 
 Cscope은 자유롭게 사용할 수 있는 프로그램(프리웨어)입니다.  어떤 이름이 정의된
@@ -284,16 +291,16 @@ Cscope은 자유롭게 사용할 수 있는 프로그램(프리웨어)입니다.
 </pre><hr><pre><b class="vimtag">*<a name="29.2">29.2</a>*</b>	미리보기 창
 
 어떤 함수를 사용하는 코드를 짤 때, 인자를 정확하게 사용하는 게 중요하겠지요.
-인자로 어떤 값들을 넘겨야하는 지 확인하기 위해서는 함수가 어떻게 정의되었는 지
-살펴 볼 필요가 있습니다.  태그 기능은 이 때도 유용합니다.  함수의 정의를 다른
-창에 보여줄 수도 있는데, 이 때 사용되는 것이 미리보기 창(preview window)
+인자로 어떤 값들을 넘겨야하는지 확인하기 위해서는 함수가 어떻게 정의되었는지
+살펴볼 필요가 있습니다.  태그 기능은 이때도 유용합니다.  함수의 정의를 다른
+창에 보여줄 수도 있는데, 이때 사용하는 것이 미리보기 창(preview window)
 입니다.
    "write_char" 함수를 미리보기 창에 표시하려면:
 <code class="example"></code>
 <code class="example">	:ptag write_char</code>
 <code class="example"></code>
-빔은 새 창을 열고, "write_char" 태그를 찾아 보여줄 것입니다.  그리고 원래의
-위치로 돌아갑니다.  따라서 <code class="keystroke">CTRL-W</code> 명령으로 창을 옮겨다닐 필요 없이 계속해서
+Vim은 새 창을 열고, "write_char" 태그를 찾아 보여줄 것입니다.  그리고 원래의
+위치로 돌아갑니다.  따라서 <code class="keystroke">CTRL-W</code> 명령으로 창을 옮겨 다닐 필요 없이 계속해서
 프로그램을 입력할 수 있습니다.
    만약 함수 이름이 문서 내용 중에 나온다면, 다음 명령으로 함수의 정의를
 미리보기 창에서 볼 수 있습니다:
@@ -312,9 +319,9 @@ Cscope은 자유롭게 사용할 수 있는 프로그램(프리웨어)입니다.
 <code class="example"></code>
 <code class="example">	:pedit defs.h</code>
 <code class="example"></code>
-마지막으로, ":psearch"는 현재 파일 및 인클루드된 파일에서 단어를 찾고 찾은
-단어를 미리보기 창에 표시해줍니다.  이 기능은 태그파일이 따로 없는 라이브러리
-함수를 사용할 때에 유용합니다.  예를 들어:
+마지막으로, ":psearch"는 현재 파일 및 포함된 파일에서 단어를 찾고 찾은 단어를
+미리보기 창에 표시해줍니다.  이 기능은 태그파일이 따로 없는 라이브러리 함수를
+사용할 때에 유용합니다.  예를 들어:
 <code class="example"></code>
 <code class="example">	:psearch popen</code>
 <code class="example"></code>
@@ -323,13 +330,13 @@ Cscope은 자유롭게 사용할 수 있는 프로그램(프리웨어)입니다.
 
 	FILE	<b class="vimtag">*<a name="popen __P((const char ">popen __P((const char </a>*</b><code class="section">, const char *)); </code>
 
-'previewheight'(미리보기높이) 설정으로 미리보기 창의 기본 높이를 지정할 수
+'previewheight'(미리보기높이) 옵션으로 미리보기 창의 기본 높이를 지정할 수
 있습니다.
 
 </pre><hr><pre><b class="vimtag">*<a name="29.3">29.3</a>*</b>	프로그램 코드 돌아다니기
 
-프로그램은 그 형식이 정해져있으므로, 빔으로 그 안의 내용을 인식할 수 있습니다.
-내용에 따라 이동할 수 있는 명령어도 몇 가지 있습니다.
+프로그램은 그 형식이 정해져있으므로, Vim으로 그 안의 내용을 인식할 수
+있습니다.  내용에 따라 이동할 수 있는 명령어도 몇 가지 있습니다.
    C 프로그램에서 종종 다음과 같은 형태를 볼 수 있습니다:
 
 <code class="section">	#ifdef USE_POPEN </code>
@@ -348,8 +355,8 @@ Cscope은 자유롭게 사용할 수 있는 프로그램(프리웨어)입니다.
 <code class="example"></code>
 <code class="example">	[#</code>
 <code class="example"></code>
-"#if"나 "#ifdef" 뒤에 있는 것이 아니라면 삑 소리가 나며 동작하지 않을
-것입니다.  다음 "#else"나 "#endif"로 이동하려면:
+"#if"나 "#ifdef" 뒤에 있는 것이 아니라면 삐 소리가 나며 동작하지 않을 겁니다.
+다음 "#else"나 "#endif"로 이동하려면:
 <code class="example"></code>
 <code class="example">	]#</code>
 <code class="example"></code>
@@ -367,10 +374,11 @@ Cscope은 자유롭게 사용할 수 있는 프로그램(프리웨어)입니다.
 "#ifdef" - "#endif" 영역은 무시하면서 말이지요.
 
 
-코드 블록을 돌아다니기
+코드 블록 돌아다니기
+--------------------
 
 C의 코드 블록은 <code class="special">{}</code>로 구분됩니다.  블록 하나는 매우 길 수도 있지요.  바깥
-블록의 시작위치로 가려면 "[[" 명령을 사용하십시오.  끝 위치로 가려면 "]["
+블록의 시작 위치로 가려면 "[[" 명령을 사용하십시오.  끝 위치로 가려면 "]["
 명령을 사용하십시오.  단, 이 명령은 "<code class="special">{"와 "}</code>"가 줄의 맨 앞인 첫 번째 열에 있는
 경우에만 동작합니다.
    "[<code class="special">{" 명령은 현재 블록의 시작위치로 이동합니다.  쌍을 이루는 {}</code> 는 모두
@@ -392,13 +400,13 @@ C의 코드 블록은 <code class="special">{}</code>로 구분됩니다.  블�
 			}				       &lt;-+
 
 C++ 나 Java에서는, 맨 바깥의 <code class="special">{}</code>가 클래스(class)의 블록입니다.  실제
-메소드(method)의 블록은 그 안 쪽의 <code class="special">{}</code>가 됩니다.  클래스의 안에서 위쪽에 있는
-메소드의 시작 위치는 "[m"으로 찾을 수 있습니다. "]m"은 이후의 메소드 끝을
+메서드(method)의 블록은 그 안쪽의 <code class="special">{}</code>가 됩니다.  클래스의 안에서 위쪽에 있는
+메서드의 시작 위치는 "[m"으로 찾을 수 있습니다. "]m"은 다음 메서드 시작 위치를
 찾습니다.
 
 그리고, "[]"는 파일의 앞부분으로 움직이며 함수의 끝을 찾고, "]]"는 파일의
-뒷부분으로 움직이며 다음 함수의 시작을 찾습니다.  함수의 끝인 지는, 줄의 맨
-앞 첫번째 열에 "}"가 있는 지 여부로 결정됩니다.
+뒷부분으로 움직이며 다음 함수의 시작을 찾습니다.  함수의 끝인지는, 줄의 맨 앞
+첫 번째 열에 "}"가 있는지 여부로 결정됩니다.
 
 				int func1(void)
 				{
@@ -408,7 +416,7 @@ C++ 나 Java에서는, 맨 바깥의 <code class="special">{}</code>가 클래�
 	      []  |		int func2(void)
 		  |	   +-&gt;	{
 		  |<code class="badlink">    [[  </code>|		if (flag)
-	시작위치  +--	   +--			return flag;
+	시작 위치 +--	   +--			return flag;
 		  |<code class="badlink">    ][  </code>|		return 2;
 		  |	   +-&gt;	}
 	      ]]  |
@@ -422,6 +430,7 @@ C++ 나 Java에서는, 맨 바깥의 <code class="special">{}</code>가 클래�
 
 
 괄호 안에서 이동하기
+--------------------
 
 "[(", "])"명령도 "[<code class="special">{", "]}</code>"와 <code class="special">{}</code> 쌍 대신 () 쌍을 찾는 다는 점만 다를 뿐,
 동일하게 동작합니다.
@@ -436,6 +445,7 @@ C++ 나 Java에서는, 맨 바깥의 <code class="special">{}</code>가 클래�
 <code class="example"></code>
 <code class="example"></code>
 주석 안에서 이동하기
+--------------------
 
 주석의 시작 부분으로 이동하려면 "[/"를 사용하십시오.  아래쪽으로 이동하면서
 주석의 끝을 찾으려면 "]/"를 사용하십시오.  단, /<b class="vimtag">*<a name=" - "> - </a>*</b>/ 형태의 주석에서만
@@ -458,34 +468,34 @@ C 프로그램을 작성 중에 어떤 변수가 "int"인지, "unsigned"인지 �
 <code class="example"></code>
 <code class="example">	[I</code>
 <code class="example"></code>
-빔이 해당 되는 줄을 찾아서 보여줄 것입니다.  현재 파일이 아니어도, 인클루드 된
-파일도 모두 찾아줍니다 (물론 인클루드된 파일에 인클루드된 것도).  그러면 다음과
-같이 보입니다:
+Vim이 해당 되는 줄을 찾아서 보여줄 것입니다.  현재 파일이 아니어도,
+포함(include)된 파일도 모두 찾아줍니다 (물론 포함된 파일에 포함된 것도).
+그러면 다음과 같이 보입니다:
 
 <code class="section">	structs.h </code>
 	 1:   29     unsigned     column;    /<b class="vimtag">*<a name=" 열 번호 "> 열 번호 </a>*</b><code class="section">/ </code>
 
-태그나 미리보기창에 비해, 인클루드된 파일들까지 알아서 다 찾아준 다는 장점이
-있습니다.  대부분의 경우 정확한 선언 위치를 찾을 수 있습니다.  태그 파일이 최신이
-아니어서 틀린 정보를 갖고 있거나, 인클루드 된 파일들에 대한 태그 파일이 아예
-없더라도 말이지요.
-   하지만, "[I"가 동작하기 위해서는 몇 가지가 제대로 설정되어야합니다.
-무엇보다, 'include'(인클루드) 설정에 어떻게 파일이 인클루드 되는 지
-지정되어야합니다.  기본값은 C와 C++에서 동작하도록 되어있습니다.  다른
-언어에서 사용하려면 적절히 바꿔주어야합니다.
+태그나 미리보기 창에 비해, 포함된 파일들까지 알아서 다 찾아준다는 장점이
+있습니다.  대부분의 경우 정확한 선언 위치를 찾을 수 있습니다.  태그 파일이
+최신이 아니어서 틀린 정보를 갖고 있거나, 포함된 파일들에 대한 태그 파일이
+아예 없더라도 말이지요.
+   하지만, "[I"가 동작하기 위해서는 몇 가지가 제대로 설정되어야 합니다.
+무엇보다, 'include'(포함) 옵션에 어떻게 파일이 포함되는지 지정되어야 합니다.
+기본 값은 C와 C++에서 동작하도록 되어있습니다.  다른 언어에서 사용하려면
+적절히 바꿔주어야 합니다.
 
 
-인클루드할 파일 위치 지정
+포함된 파일 위치 지정
+---------------------
 
-   빔은 인클루드할 파일을 'path'(경로) 설정에 지정된 위치에서 찾습니다.  만약
-인클루드할 파일이 들어있는 디렉토리가 빠져있다면, 이 파일은 찾을 수 없습니다.
-어떤 파일을 찾을 수 없는 지는 다음 명령으로 확인할 수 있습니다:
+   Vim은 포함된 파일을 'path'(경로) 옵션에 지정한 위치에서 찾습니다.  만약
+포함된 파일이 들어있는 디렉터리가 빠져있다면, 이 파일은 찾을 수 없습니다.
+어떤 파일을 찾을 수 없는지는 다음 명령으로 확인할 수 있습니다:
 <code class="example"></code>
 <code class="example">	:checkpath</code>
 <code class="example"></code>
-위 명령은 찾을 수 없는 인클루드할 파일을 보여줍니다.  또한, 찾은 인클루드할
-파일이 인클루드 하는 파일 중 찾을 수 없는 파일도 보여줍니다.  결과는 다음과
-같습니다:
+위 명령은 찾을 수 없는 포함된 파일을 보여줍니다.  또한, 찾은 포함된 파일에
+포함된 파일 중 찾을 수 없는 파일도 보여줍니다.  결과는 다음과 같습니다:
 
 <code class="section">	--- Included files not found in path --- </code>
 <code class="section">	<code class="special">&lt;io.h&gt;</code> </code>
@@ -493,54 +503,55 @@ C 프로그램을 작성 중에 어떤 변수가 "int"인지, "unsigned"인지 �
 <code class="section">	  <code class="special">&lt;functions.h&gt;</code> </code>
 <code class="section">	  <code class="special">&lt;clib/exec_protos.h&gt;</code> </code>
 
-"io.h" 파일은 현재의 파일에서 인클루드했고, 찾을 수 없었습니다.  "vim.h"는
-찾았고, ":checkpath"가 이 파일에서 인클루드하고 있는 파일들을 계속해서
-검사했습니다.  "functions.h"와 "clib/exec_protos.h" 파일은 "vim.h"가
-인클루드했는데, 찾을 수 없었습니다.
+"io.h" 파일은 현재의 파일에 포함되었고, 찾을 수 없었습니다.  "vim.h"는 찾았고,
+":checkpath"가 이 파일에서 포함하고 있는 파일들을 계속해서 검사했습니다.
+"functions.h"와 "clib/exec_protos.h" 파일은 "vim.h"가 포함시켰는데, 찾을 수
+없었습니다.
 
 	<code class="note">Note:</code>
-	빔은 컴파일러가 아닙니다.  그래서 "#ifdef"를 해석하지 못합니다.
+	Vim은 컴파일러가 아닙니다.  그래서 "#ifdef"를 해석하지 못합니다.
 	즉, "#include"가 "#if NEVER" 다음에 나왔더라도 동작하는 "#include"로
 	생각하고 파일을 찾습니다.
 
-파일을 못 찾을 때는, 파일이 있는 디렉토리를 'path' 설정에 추가하면 됩니다.
-아마도 Makefile을 찾아보면 어떤 디렉토리를 추가해야하는 지 알 수 있을
-것입니다.  "-I"가 있는 줄을 찾아보십시오.  예를 들어, "-I/usr/local/X11"과 같은
-부분이 있다면, 다음 명령으로 이 디렉토리를 추가하면 됩니다:
+파일을 못 찾을 때는, 파일이 있는 디렉터리를 'path' 설정에 추가하면 됩니다.
+아마도 Makefile을 찾아보면 어떤 디렉터리를 추가해야하는 지 알 수 있을
+것입니다.  "-I"가 있는 줄을 찾아보십시오.  예를 들어, "-I/usr/local/X11"과
+같은 부분이 있다면, 다음 명령으로 이 디렉터리를 추가하면 됩니다:
 <code class="example"></code>
 <code class="example">	:set path+=/usr/local/X11</code>
 <code class="example"></code>
-하위 디렉토리가 많이 있다면, "*" 와일드카드를 사용해도 됩니다.  예제:
+하위 디렉터리가 많이 있다면, "*" 와일드카드를 사용해도 됩니다.  예제:
 <code class="example"></code>
 <code class="example">	:set path+=/usr/*/include</code>
 <code class="example"></code>
 위 명령으로 "/usr/local/include"나 "/usr/X11/include"에 있는 파일을 모두 찾을
 수 있게 됩니다.
 
-여러 단계로 하위 디렉토리가 뻗어있는 프로젝트에서 작업할 때는, "**" 가
-유용합니다.  하위 디렉토리를 계속 내려가면서 모두 찾아줍니다.  예제:
+여러 단계로 하위 디렉터리가 뻗어있는 프로젝트에서 작업할 때는, "**" 가
+유용합니다.  하위 디렉터리를 계속 내려가면서 모두 찾아줍니다.  예제:
 <code class="example"></code>
 <code class="example">	:set path+=/projects/invent/**/include</code>
 <code class="example"></code>
-위 명령은 다음 디렉토리들의 파일들을 찾습니다:
+위 명령은 다음 디렉터리들의 파일들을 찾습니다:
 
 <code class="section">	/projects/invent/include </code>
 <code class="section">	/projects/invent/main/include </code>
 <code class="section">	/projects/invent/main/os/include </code>
 	등등
 
-이 외에도 'path' 설정 도움말을 보면, 더 다양한 방법들을 알 수 있습니다.
+이 외에도 'path' 옵션 도움말을 보면, 더 다양한 방법들을 알 수 있습니다.
    실제로 어떤 파일들을 찾았는지 확인하려면, 다음 명령을 사용하십시오:
 <code class="example"></code>
 <code class="example">	:checkpath!</code>
 <code class="example"></code>
-인클루드한 파일과 이 파일들이 또 인클루드 한 파일들 등등의 (매우 긴) 목록을 볼
-수 있습니다.  목록을 짧게 만들기 위해, 빔은 이전에 나열했던 파일에 대해서는
-"(Already listed)"(전에 나왔음)라고 표시하고 이 파일이 인클루드하는 파일은
-다시 보여주지 않습니다.
+포함된 파일과 이 파일들에 또 포함된 파일들 등등의 (매우 긴) 목록을 볼 수
+있습니다.  목록을 짧게 만들기 위해, Vim은 이전에 나열했던 파일에 대해서는
+"(Already listed)"(전에 나왔음)라고 표시하고 이 파일에 포함된 파일은 다시
+보여주지 않습니다.
 
 
 찾은 내용으로 이동하기
+----------------------
 
 "[I" 명령은 한 줄의 내용만 보여주는 목록을 만듭니다.  첫 번째 결과에 대해 좀
 더 자세히 살펴보려면, 다음 명령으로 직접 그 위치로 이동하면 됩니다:
@@ -555,10 +566,11 @@ C 프로그램을 작성 중에 어떤 변수가 "int"인지, "unsigned"인지 �
 <code class="example">	3[<code class="special">&lt;Tab&gt;</code></code>
 <code class="example"></code>
 위 명령을 사용하면 목록의 세 번째 결과로 이동합니다.  이동하기 전 위치로
-돌아오려면 <code class="keystroke">CTRL-O</code> 를 사용하면 된다는 점, 잊지마세요.
+돌아오려면 <code class="keystroke">CTRL-O</code>를 사용하면 된다는 점, 잊지 마세요.
 
 
 관련 명령
+---------
 
 	[i		첫 번째 결과만 보임
 	]I		현재 위치 이후에서만 찾음
@@ -566,15 +578,16 @@ C 프로그램을 작성 중에 어떤 변수가 "int"인지, "unsigned"인지 �
 
 
 매크로로 정의된 이름 찾기
+-------------------------
 
 "[I"는 모든 이름을 찾습니다.  "#define"으로 정의된 매크로만 찾으려면, 다음
 명령을 사용하십시오:
 <code class="example"></code>
 <code class="example">	[D</code>
 <code class="example"></code>
-이 명령도 인클루드한 파일들까지 찾습니다.  'define'(디파인) 설정으로 "[D"로
-찾을 매크로가 어떤 형식인지 지정할 수 있습니다.  이 설정을 바꾸어서 C나 C++이
-아닌 언어에서도 동작하도록 할 수 있겠지요.
+이 명령도 포함된 파일들까지 찾습니다.  'define'(디파인) 옵션으로 "[D"로 찾을
+매크로가 어떤 형식인지 지정할 수 있습니다.  이 설정을 바꾸어서 C나 C++이 아닌
+언어에서도 동작하도록 할 수 있겠지요.
    "[D"와 관련된 다음 명령들도 있습니다:
 
 	[d		첫 번째 결과만 보임
@@ -583,12 +596,12 @@ C 프로그램을 작성 중에 어떤 변수가 "int"인지, "unsigned"인지 �
 
 </pre><hr><pre><b class="vimtag">*<a name="29.5">29.5</a>*</b>	지역 이름 찾기
 
-"[I" 명령은 인클루드한 파일까지 모두 찾습니다.  커서 위치의 단어가 처음 사용된
+"[I" 명령은 포함된 파일까지 모두 찾습니다.  커서 위치의 단어가 처음 사용된
 위치를 현재 파일 내에서만 찾고 이동하려면:
 <code class="example"></code>
 <code class="example">	gD</code>
 <code class="example"></code>
-힌트: gD는 Goto(이동) Definition(정의)를 의미합니다.  이 명령은 지역적으로(C
+힌트: gD는 Goto(이동) Definition(정의)을 의미합니다.  이 명령은 지역적으로(C
 언어에서라면 "스태틱(static)"으로) 선언된 변수나 함수를 찾을 때 유용합니다.
 다음 예에서 커서가 "counter"에 있다고 합시다:
 
@@ -609,7 +622,7 @@ C 프로그램을 작성 중에 어떤 변수가 "int"인지, "unsigned"인지 �
 처음으로 나타나는 위치를 찾습니다.  사실, 위쪽으로 이동하면서 줄의 맨 처음
 첫 번째 열에 "{"이 나오는 곳을 찾고, 그 위에 빈 줄이 나타날 때까지 더
 올라갑니다.  그리고 그 위치부터 아래로 내려가면서 이름을 찾는 것입니다.  예를
-들어 (커서는 "idx"에 있다고 합시다):
+들어 (커서는 맨 마지막 "idx"에 있다고 합시다):
 
 		int find_entry(char *name)
 		{
@@ -625,6 +638,6 @@ C 프로그램을 작성 중에 어떤 변수가 "int"인지, "unsigned"인지 �
 
 저작권: |<a href="usr_01.html#manual-copyright">manual-copyright</a>| 참고  vim:tw=78:ts=8:ft=help:norl:
 </pre>
-<p><i>Generated by vim2html on Fri Dec 23 22:48:56 PST 2011</i></p>
+<p><i>Generated by vim2html on 2013. 12. 14. (토) 19:53:58 KST</i></p>
 </body>
 </html>
